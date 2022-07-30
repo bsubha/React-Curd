@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Button } from 'semantic-ui-react'
+import Create from './Component/Create';
+import Read from './Component/Read';
+import Update from './Component/Update';
+import {BrowserRouter as Router,Route, Routes} from 'react-router-dom' 
+import Addtodo from './Component/Addtodo';
+
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+         
+      <Router>
+      
+      
+        <Routes>
+        <Route path='/' element={<Addtodo/>}/>
+      <Route path='/create' element={<Create/>}/>
+      
+      <Route path='/read' element={<Read/>}/>
+    
+      <Route path='/update' element={<Update/>}/>
+      </Routes>
+      </Router>
     </div>
+    
+
   );
 }
 
